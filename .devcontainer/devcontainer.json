@@ -1,27 +1,23 @@
 {
-    "name": "Rustlings Environment",
-    "image": "mcr.microsoft.com/devcontainers/rust:1",
-    
-    // Configure tool-specific properties.
-    "customizations": {
-        "vscode": {
-            // Add extensions that are essential for Rust development
-            "extensions": [
-                "rust-lang.rust-analyzer",
-                "tamasfe.even-better-toml",
-                "serayuzgur.crates"
-            ],
-            // Useful settings for smooth coding
-            "settings": {
-                "editor.formatOnSave": true,
-                "rust-analyzer.cargo.autoreload": true
-            }
-        }
-    },
-
-    // Run rustlings initialization after the container is created
-    "postCreateCommand": "cargo install --force --path .",
-
-    // Remote user to avoid permissions issues
-    "remoteUser": "vscode"
+  "name": "Rustlings Environment",
+  "image": "mcr.microsoft.com/devcontainers/rust:1",
+  // Add this features section to install Git LFS automatically
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "rust-analyzer.cargo.autoreload": true
+      }
+    }
+  },
+  "postCreateCommand": "cargo install --force --path .",
+  "remoteUser": "vscode"
 }
